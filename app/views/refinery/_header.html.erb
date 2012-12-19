@@ -1,0 +1,25 @@
+<div id="header-content" class="clearfix">
+	<div id='logo'>
+	  <%= link_to image_tag("logo.png"), refinery.root_path %>
+	</div>
+
+	<div id="header-sidebar">
+		<div id="families-site-desc">
+			<h1>SK Families Site</h1>
+			<p><a href="/login"><%= image_tag "go_button.png" %></a> Families with enrolled students can access updates, policies, forms, and more at this location. </p>
+		</div>
+		<nav id="quick-links">
+			<ul>
+				<li><a href="/FAQ">FAQ</a></li>
+				<li><a href="http://www.facebook.com/">Facebook</a></li>
+				<li><a href="/open-house">Open House</a></li>
+				<li><a href="/location">Location</a></li>
+			</ul>
+		</nav>
+	</div>
+</div>
+
+<%= render(:partial => "/refinery/menu", :locals => {
+             :dom_id => 'menu',
+             :css => 'menu'
+           }) %>

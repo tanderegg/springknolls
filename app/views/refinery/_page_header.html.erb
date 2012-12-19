@@ -1,0 +1,23 @@
+<div id="header-content" class="clearfix page-header">
+	<div id='logo'>
+	  <%= link_to image_tag("small_logo.png"), refinery.root_path %>
+	</div>
+
+	<div id="header-sidebar">
+		<%= image_tag 'header_flowers.png' %>
+
+		<nav id="quick-links">
+			<ul>
+				<li><a href="/FAQ">FAQ</a></li>
+				<li><a href="http://www.facebook.com/">Facebook</a></li>
+				<li><a href="/open-house">Open House</a></li>
+				<li><a href="/location">Location</a></li>
+			</ul>
+		</nav>
+	</div>
+</div>
+
+<%= render(:partial => "/refinery/menu", :locals => {
+             :dom_id => 'menu',
+             :css => 'menu'
+           }) %>

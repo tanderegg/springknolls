@@ -1,0 +1,19 @@
+<section id="body-content">
+	<section id="banner">
+		<%=raw @page.content_for(:banner) %>
+	</section>
+	<section id="bottom-content">
+		<div id="bottom-content-1"><%=raw @page.content_for(:content_1) %></div>
+		<div id="bottom-content-2"><%=raw @page.content_for(:content_2) %></div>
+		<div id="bottom-content-3"><%=raw @page.content_for(:content_3) %></div>
+	</section>
+</section>
+
+<section id="sidebar-content">
+	<%=raw @page.content_for(:side_body) %>
+
+	<br />
+	
+	<h3>Featured Friend of SK</h3>
+	<div id="ad-content"><%=raw @page.content_for(:ad_content) %></div>
+</section>

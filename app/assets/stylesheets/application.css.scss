@@ -1,0 +1,331 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+@font-face {
+	font-family: "News Gothic Std";
+	src: font-url("NewsGothicStd.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "News Gothic Std Bold";
+	src: font-url("NewsGothicStd-Bold.otf") format("opentype");
+	font-weight: bold;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	font-family: "News Gothic Std", Arial, Sans-Serif;
+	font-size: inherit;
+	font-style: inherit;
+}
+
+body {
+	background: #B9C9B9;
+	margin: 0;
+	padding: 0;
+	font-size: 10pt;
+}
+
+h1, h2, h3 {
+	color: #FFF;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 0.5em;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 200%;
+}
+
+h2 {
+	font-size: 150%;
+}
+
+h3 {
+	font-size: 125%;
+}
+
+section, div, p {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin-bottom: 0.5em;
+}
+
+img {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #34447a;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+#page_container {
+	padding: 0;
+	margin: 0;
+}
+
+#site_bar {
+	margin: 0;
+}
+
+header#header {
+	margin: 0;
+	background: #FFF image-url('header_bg.png') right no-repeat;
+
+	#header-content {
+		width: 960px;
+		margin: 0 auto;
+		padding: 1em 0;
+
+		#logo {
+			float: left;
+		}
+
+		#header-sidebar {
+			margin-top: 2em;
+
+			nav#quick-links {
+				float: right;
+				text-align: right;
+
+				ul {
+					color: #34447a;
+					list-style-type: none;
+					margin-right: 1em;
+					margin-top: 1.5em;
+
+					li {
+						color: inherit;
+						margin-bottom: 0.5em;
+
+						a {
+							color: inherit;
+						}
+					}
+				}
+			}
+
+			div#families-site-desc {
+				float: right;
+				width: 200px;
+				padding: 10px 20px;
+				border-left: 1px dashed black;
+
+				a {
+					float: right;
+					margin-left: 0.5em;
+				}
+
+				h1 {
+					color: #34447a;
+				}
+			}
+		}
+	}
+
+	#header-content.page-header {
+		padding: 0;
+
+		#logo {
+			margin: 0;
+			padding: 0;
+		}
+
+		img {
+			float: right;
+			margin: 0;
+			padding: 0;
+		}
+
+		#header-sidebar {
+			margin-top: 0;
+			nav#quick-links {
+				ul {
+					margin-top: 2.5em;
+				}
+			}
+		}
+	}
+
+	nav#menu {
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 125%;
+	font-family: "News Gothic Std Bold";
+	border-top: 1px dashed black;
+	border-bottom: 1px dashed black;
+	background: #7fab56;
+
+	div#menu-wrapper {
+		width: 960px;
+		margin: 0 auto;
+
+		ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		float: left;
+
+			li {
+				float: left;
+				padding: 15px 0em 10px 0;
+				margin: 0;
+
+				a {
+					text-decoration: none;
+					color: inherit;
+					border-right: 1px dashed black;
+					padding: 7px 1.5em 7px;
+				}
+			}
+
+			li:hover {
+				background: #FFF;
+				color: #34447a;
+			}
+		}
+
+		div#menu-content {
+			float: right;
+			display: block;
+			height: 45px;
+			position: relative;
+			min-width: 175px;
+			text-align: right;
+
+			img {
+				vertical-align: middle;
+			}
+
+			span {
+				position: absolute;
+				right: 25px;
+				top: 15px;
+			}
+		}
+	}
+}
+}
+
+footer {
+	width: 960px;
+	margin: 0 auto;
+}
+
+/* HOME PAGE */
+
+section#page {
+	width: 960px;
+	margin: 2em auto;
+
+	#body-content {
+		width: 60%;
+		margin-right: 5%;
+		float: left;
+		background: #FFF;
+		padding: 10px;
+
+		p {
+			font-size: 85%;
+		}
+
+		section#banner {
+			background: #F09050;
+
+			img {
+				float: left;
+			}
+
+			div {
+				float: left;
+				width: 152px;
+				padding: 20px;
+			}
+		}
+
+		section#bottom-content {
+			padding: 0.5em 0;
+
+			h1, h2, h3 {
+				margin: 0;
+				color: #F09050;
+			}
+
+			div {
+				min-height: 153px;
+				padding: 0 2%;
+				width: 29%;
+				float: left;
+				border-right: 1px dashed black;
+			}
+
+			div#bottom-content-3 {
+				border: 0;
+			}
+
+			a img {
+				vertical-align: middle;
+				margin-left: 0.5em;
+			}
+		}
+
+	}
+
+	#sidebar-content {
+		width: 32%;
+		float: left;
+
+		div#ad-content {
+			border: 1px dashed black;
+			padding: 1em 0em 1em;
+		}
+	}
+}
+
