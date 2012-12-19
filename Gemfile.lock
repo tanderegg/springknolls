@@ -170,6 +170,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  execjs
   jquery-rails (~> 2.0.0)
   rails (= 3.2.3)
   refinerycms (~> 2.0.0)

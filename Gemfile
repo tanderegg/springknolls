@@ -40,3 +40,4 @@ gem 'jquery-rails', '~> 2.0.0'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'refinerycms', '~> 2.0.0'
+gem 'execjs'
