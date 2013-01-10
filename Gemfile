@@ -14,7 +14,7 @@ end
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  #gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
@@ -40,4 +40,4 @@ gem 'jquery-rails', '~> 2.0.0'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'refinerycms', '~> 2.0.0'
-gem 'execjs'
+#gem 'execjs'
