@@ -6,21 +6,40 @@
     css = [(css || 'menu clearfix')].flatten.join(' ')
     hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
 -%>
+
 <nav id='<%= dom_id %>' class='<%= css %>'>
   <div id="menu-wrapper" class="clearfix">
     <ul class="clearfix">
-      <%= render :partial => '/refinery/menu_branch', :collection => roots,
-                 :locals => {
-                   :hide_children => hide_children,
-                   :sibling_count => (roots.length - 1),
-                   :menu_levels => local_assigns[:menu_levels],
-                   :apply_css => true #if you don't care about class='first' class='last' or class='selected' set apply_css to false for speed.
-                 } -%>
+      <% for menu_branch in roots do %>
+        <%
+          if !!local_assigns[:apply_css] and (classes = menu_branch_css(local_assigns)).any?
+            css = "class='#{classes.join(' ')}'".html_safe
+          end
+        -%>
+        <li<%= ['', css].compact.join(' ').gsub(/\ *$/, '').html_safe %>>
+          <%= link_to(menu_branch.title, refinery.url_for(menu_branch.url)) -%>
+        </li>
+      <% end %>
     </ul>
+
     <div id="menu-content">
       <span>(301) 650-0086</span>
       <%= image_tag 'menu_bug.png' %>
     </div>
   </div>
 </nav>
+
+<nav id="sub-menu">
+  <% if (children = @page.children).present? and @page.title != 'Home' -%>
+    <ul class='clearfix'>
+      <%= render :partial => '/refinery/menu_branch', :collection => children,
+                 :locals => {
+                   :apply_css => local_assigns[:apply_css],
+                   :hide_children => false,
+                   :menu_levels => 1
+                 } -%>
+    </ul>
+  <% end -%>
+</nav>
+
 <% end -%>
