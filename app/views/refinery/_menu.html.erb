@@ -12,9 +12,15 @@
     <ul class="clearfix">
       <% for menu_branch in roots do %>
         <%
+          classes = []
           if !!local_assigns[:apply_css] and (classes = menu_branch_css(local_assigns)).any?
-            css = "class='#{classes.join(' ')}'".html_safe
           end
+
+          if (@page.parent && @page.parent.title==menu_branch.title) || @page.title==menu_branch.title
+            classes += ['selected']
+          end
+
+          css = "class='#{classes.join(' ')}'".html_safe
         -%>
         <li<%= ['', css].compact.join(' ').gsub(/\ *$/, '').html_safe %>>
           <%= link_to(menu_branch.title, refinery.url_for(menu_branch.url)) -%>
@@ -30,7 +36,13 @@
 </nav>
 
 <nav id="sub-menu">
-  <% if (children = @page.children).present? and @page.title != 'Home' -%>
+  <% if @page.children.size > 0 -%>
+    <% children = @page.children %>
+  <% else -%>
+    <% children = @page.parent.children rescue nil %>
+  <% end -%>
+
+  <% if children.present? and @page.title != 'Home' -%>
     <ul class='clearfix'>
       <%= render :partial => '/refinery/menu_branch', :collection => children,
                  :locals => {

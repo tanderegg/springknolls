@@ -1,0 +1,18 @@
+<div>
+  <div style="float: right; color: #000">
+  	8900 Georgia Avenue, Silver Spring, MD 20910
+  	<br />
+	(301) 650-0086  |  <a href="mailto:director@springknolls.org">director@springknolls.org</a>
+  </div>
+  <ul>
+  <% for page in refinery_menu_pages.roots %>
+  	<li><a href="<%= page.url %>"><%= page.title %></a> | </li>
+  <% end %>
+  	<li><a href="/faq">FAQs</a> | </li>
+	<li><a href="https://www.facebook.com/SpringKnolls.Coop" target="_blank">FB</a> | </li>
+	<li><a href="/open-house">Open House</a> | </li>
+	<li><a href="/location">Location</a></li>
+  </ul>
+  <%= t('.copyright', :year => Time.now.year,
+                      :site_name => Refinery::Core.site_name) %>
+</div>

@@ -23,6 +23,12 @@
 	font-weight: bold;
 }
 
+@font-face {
+	font-family: "Tekton Pro Bold";
+	src: font-url("TektonPro-BoldCond.otf") format("opentype");
+	font-weight: bold;
+}
+
 html {
 	margin: 0;
 	padding: 0;
@@ -35,10 +41,11 @@ html {
 }
 
 body {
-	background: #B9C9B9;
+	background: #a7c5c2;
 	margin: 0;
 	padding: 0;
 	font-size: 10pt;
+	color: #444;
 }
 
 h1, h2, h3 {
@@ -155,7 +162,7 @@ header#header {
 				float: right;
 				width: 200px;
 				padding: 10px 20px;
-				border-left: 1px dashed black;
+				border-left: 2px dotted black;
 
 				a {
 					float: right;
@@ -197,10 +204,10 @@ header#header {
 	color: #FFF;
 	text-decoration: none;
 	font-weight: bold;
-	font-size: 125%;
-	font-family: "News Gothic Std Bold";
-	border-top: 1px dashed black;
-	border-bottom: 1px dashed black;
+	font-size: 135%;
+	font-family: "Tekton Pro Bold";
+	border-top: 3px dotted #34447a;
+	border-bottom: 3px dotted #34447a;
 	background: #7fab56;
 
 		div#menu-wrapper {
@@ -216,18 +223,18 @@ header#header {
 				li {
 					position: relative;
 					float: left;
-					padding: 15px 0em 10px 0;
+					padding: 13px 0em 9px 0;
 					margin: 0;
 
 					a {
 						text-decoration: none;
 						color: inherit;
-						border-right: 1px dashed black;
-						padding: 7px 1.5em 7px;
+						border-right: 2px dotted #34447a;
+						padding: 7px 0.75em 7px;
 					}
 				}
 
-				li:hover {
+				li.selected, li:hover {
 					background: #FFF;
 					color: #34447a;
 				}
@@ -271,14 +278,14 @@ header#header {
 
 				a {
 					text-decoration: none;
-					color: inherit;
-					border-right: 1px dashed black;
+					color: #34447a;
+					border-right: 2px dotted #34447A;
 					padding: 7px 1.5em 7px;
 				}
 			}
 
 			li:hover {
-				color: #34447a;
+				font-weight: bold;
 			}
 		}
 	}
@@ -287,13 +294,42 @@ header#header {
 footer {
 	width: 960px;
 	margin: 0 auto;
+	color: #FFF;
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline;
+			margin-right: 0.25em;
+		}
+	}
 }
 
 /* HOME PAGE */
 
 section#page {
+	background: #B9C9B9;
 	width: 960px;
-	margin: 2em auto;
+	margin: 0 auto;
+	padding: 2em 2%;
+	margin-bottom: 1em;
+	border: 2px solid #FFF;
+	border-top: none;
+
+	#body_content_title {
+		background: #FFF;
+		color: #F09050;
+		display: inline-block;
+		padding: 0.35em 0.5em 0.25em;
+		line-height: 100%;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+		float: left;
+		border-left: 2px dotted #34447A;
+	}
 
 	#body-content {
 		width: 60%;
@@ -317,6 +353,11 @@ section#page {
 				float: left;
 				width: 152px;
 				padding: 20px;
+				color: #34447a;
+			}
+
+			h1, h2, h3 {
+				color: #34447a;
 			}
 		}
 
@@ -348,9 +389,22 @@ section#page {
 
 	}
 
-	#sidebar-content {
-		width: 32%;
+	section#body {
+		width: 60%;
 		float: left;
+		margin-right: 5%;
+		padding: 10px;
+		clear: left;
+	}
+
+	#sidebar-content, section#side_body {
+		width: 28%;
+		float: left;
+		line-height: 200%;
+
+		img {
+			margin: 0 auto;
+		}
 
 		div#ad-content {
 			border: 1px dashed black;
