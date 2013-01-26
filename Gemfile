@@ -44,5 +44,5 @@ gem 'jquery-rails', '~> 2.0.0'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem 'refinerycms', '~> 2.0.0'
+gem 'refinerycms', :git => 'git://github.com/resolve/refinerycms.git', :branch => '2-0-stable'
 #gem 'execjs'
