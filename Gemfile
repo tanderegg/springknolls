@@ -11,7 +11,7 @@ end
 
 group :production do
 	gem 'pg'
-	gem 'fog'
+	gem 'fog', "~> 1.9.0"
 end
 
 
