@@ -112,6 +112,36 @@ html[xmlns] .clearfix {
 	height: 1%;
 }
 
+table {
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: 2em;
+	border-collapse: collapse;
+
+	caption {
+		padding: 0.5em;
+		font-weight: bold;
+		font-size: 125%;
+	}
+
+	th {
+		font-weight: bold;
+	}
+
+	th.header-column {
+		width: 12em;
+		text-align: left;
+	}
+
+	td {
+		border: 1px solid #555;
+	}
+
+	td, th {
+		padding: 1em;
+	}
+}
+
 #page_container {
 	padding: 0;
 	margin: 0;
@@ -232,6 +262,48 @@ header#header {
 						border-right: 2px dotted #34447a;
 						padding: 7px 0.75em 7px;
 					}
+
+					ul {
+						list-style-type: none;
+						margin: 0;
+						padding: 0;
+						margin-left: 2em;
+						display: none;
+						position: absolute;
+						top: 40px;
+						left: -36px;
+						width: 980px;
+
+						li {
+							float: left;
+							padding: 0px 0em 0px 0;
+							margin: 0;
+							border-right: 2px dotted #34447A;
+							margin-top: 12px;
+
+							a {
+								font-size: 10pt;
+								text-decoration: none;
+								border: 0;
+								color: #34447a;
+								padding: 0px 1.5em 0px;
+								margin: 0;
+								font-weight: normal;
+							}
+						}
+
+						li:hover a {
+							color: #6777AD;
+						}
+					}
+
+					ul:hover {
+						display: block;
+					}
+				}
+
+				li:hover ul {
+					display: block;
 				}
 
 				li.selected, li:hover {
@@ -262,30 +334,32 @@ header#header {
 	}
 
 	nav#sub-menu {
-		width: 960px;
+		width: 1010px;
 		margin: 0 auto;
 		background: #FFF;
-
+		height: 2em;
 		ul {
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
+			margin-left: 2em;
+			border-left: 2px dotted #34447A;
 
 			li {
 				float: left;
-				padding: 15px 0em 10px 0;
+				padding: 7px 0em 5px 0;
 				margin: 0;
+				border-right: 2px dotted #34447A;
 
 				a {
 					text-decoration: none;
 					color: #34447a;
-					border-right: 2px dotted #34447A;
 					padding: 7px 1.5em 7px;
 				}
 			}
 
-			li:hover {
-				font-weight: bold;
+			li:hover a {
+				color: #6777AD;
 			}
 		}
 	}

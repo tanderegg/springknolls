@@ -24,6 +24,23 @@
         -%>
         <li<%= ['', css].compact.join(' ').gsub(/\ *$/, '').html_safe %>>
           <%= link_to(menu_branch.title, refinery.url_for(menu_branch.url)) -%>
+
+          <% if menu_branch.children.size > 0 -%>
+            <% children = menu_branch.children %>
+          <% else -%>
+            <% children = menu_branch.parent.children rescue nil %>
+          <% end -%>
+
+          <% if children.present? -%>
+            <ul class='clearfix'>
+              <%= render :partial => '/refinery/menu_branch', :collection => children,
+                         :locals => {
+                           :apply_css => local_assigns[:apply_css],
+                           :hide_children => false,
+                           :menu_levels => 1
+                         } -%>
+            </ul>
+          <% end -%>
         </li>
       <% end %>
     </ul>
@@ -36,22 +53,7 @@
 </nav>
 
 <nav id="sub-menu">
-  <% if @page.children.size > 0 -%>
-    <% children = @page.children %>
-  <% else -%>
-    <% children = @page.parent.children rescue nil %>
-  <% end -%>
-
-  <% if children.present? and @page.title != 'Home' -%>
-    <ul class='clearfix'>
-      <%= render :partial => '/refinery/menu_branch', :collection => children,
-                 :locals => {
-                   :apply_css => local_assigns[:apply_css],
-                   :hide_children => false,
-                   :menu_levels => 1
-                 } -%>
-    </ul>
-  <% end -%>
+  &nbsp;
 </nav>
 
 <% end -%>
