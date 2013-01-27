@@ -249,9 +249,9 @@ header#header {
 			padding: 0;
 			margin: 0;
 			float: left;
+			position: relative;
 
 				li {
-					position: relative;
 					float: left;
 					padding: 13px 0em 9px 0;
 					margin: 0;
@@ -337,7 +337,7 @@ header#header {
 		width: 1010px;
 		margin: 0 auto;
 		background: #FFF;
-		height: 2em;
+		height: 30px;
 		ul {
 			list-style-type: none;
 			margin: 0;
