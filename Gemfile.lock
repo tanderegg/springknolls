@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/rbriank/refinerycms_membership.git
+  revision: c2176f4b64132b6297e90be306a78775f3b284b8
+  branch: master
+  specs:
+    refinerycms-memberships (2.0.3)
+      nokogiri (~> 1.5.0)
+      refinerycms-core (>= 2.0.0)
+      refinerycms-settings (>= 2.0.0)
+      webrat (~> 0.7.3)
+
+GIT
   remote: git://github.com/resolve/refinerycms.git
   revision: af755744dc5e6d6414622cc0bafb7fe91e923622
   branch: 2-0-stable
@@ -162,6 +173,8 @@ GEM
     rake (10.0.0)
     rdoc (3.12)
       json (~> 1.4)
+    refinerycms-settings (2.0.2)
+      refinerycms-core (~> 2.0.1)
     ruby-hmac (0.4.0)
     sass (3.2.3)
     sass-rails (3.2.5)
@@ -187,6 +200,10 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.1.1)
       rack (>= 1.0)
+    webrat (0.7.3)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
     will_paginate (3.0.4)
 
 PLATFORMS
@@ -199,6 +216,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.3)
   refinerycms!
+  refinerycms-memberships!
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)

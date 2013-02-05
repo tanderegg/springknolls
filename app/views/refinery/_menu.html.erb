@@ -16,7 +16,7 @@
           if !!local_assigns[:apply_css] and (classes = menu_branch_css(local_assigns)).any?
           end
 
-          if (@page.parent && @page.parent.title==menu_branch.title) || @page.title==menu_branch.title
+          if @page && ((@page.parent && @page.parent.title==menu_branch.title) || @page.title==menu_branch.title)
             classes += ['selected']
           end
 

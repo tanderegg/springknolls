@@ -45,4 +45,4 @@ gem 'jquery-rails', '~> 2.0.0'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'refinerycms', :git => 'git://github.com/resolve/refinerycms.git', :branch => '2-0-stable'
-#gem 'execjs'
+gem 'refinerycms-memberships', :git => 'git://github.com/rbriank/refinerycms_membership.git', :branch => 'master'
