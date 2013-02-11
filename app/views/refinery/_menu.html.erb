@@ -1,7 +1,8 @@
 <%
   # Collect the root items.
   # ::Refinery::Menu is smart enough to remember all of the items in the original collection.
-  if (roots = local_assigns[:roots] || (collection ||= refinery_menu_pages).roots).present?
+  if (roots = local_assigns[:roots] || (collection ||= @root_page.children)).present?
+  #if (roots = local_assigns[:roots] || (collection ||= refinery_menu_pages).roots).present?
     dom_id ||= 'menu'
     css = [(css || 'menu clearfix')].flatten.join(' ')
     hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
@@ -13,7 +14,10 @@
       <% for menu_branch in roots do %>
         <%
           classes = []
-          if !!local_assigns[:apply_css] and (classes = menu_branch_css(local_assigns)).any?
+          #if !!local_assigns[:apply_css] and (classes = menu_branch_css(local_assigns)).any?
+          #end
+          if !!local_assigns[:apply_css]
+            classes = menu_branch_css(local_assigns)
           end
 
           if @page && ((@page.parent && @page.parent.title==menu_branch.title) || @page.title==menu_branch.title)
@@ -22,26 +26,29 @@
 
           css = "class='#{classes.join(' ')}'".html_safe
         -%>
-        <li<%= ['', css].compact.join(' ').gsub(/\ *$/, '').html_safe %>>
-          <%= link_to(menu_branch.title, refinery.url_for(menu_branch.url)) -%>
+        <% if menu_branch.show_in_menu %>
+          <li<%= ['', css].compact.join(' ').gsub(/\ *$/, '').html_safe %>>
+            <%= link_to(menu_branch.title, refinery.url_for(menu_branch.url)) -%>
 
-          <% if menu_branch.children.size > 0 -%>
-            <% children = menu_branch.children %>
-          <% else -%>
-            <% children = menu_branch.parent.children rescue nil %>
-          <% end -%>
+            <% if menu_branch.children.size > 0 -%>
+              <% children = menu_branch.children -%>
+            <% else -%>
+              <% #children = menu_branch.parent.children rescue nil %>
+              <% children = nil -%>
+            <% end -%>
 
-          <% if children.present? -%>
-            <ul class='clearfix'>
-              <%= render :partial => '/refinery/menu_branch', :collection => children,
-                         :locals => {
-                           :apply_css => local_assigns[:apply_css],
-                           :hide_children => false,
-                           :menu_levels => 1
-                         } -%>
-            </ul>
-          <% end -%>
-        </li>
+            <% if children.present? -%>
+              <ul class='clearfix'>
+                <%= render :partial => '/refinery/menu_branch', :collection => children,
+                           :locals => {
+                             :apply_css => local_assigns[:apply_css],
+                             :hide_children => false,
+                             :menu_levels => 1
+                           } -%>
+              </ul>
+            <% end -%>
+          </li>
+        <% end %>
       <% end %>
     </ul>
 
