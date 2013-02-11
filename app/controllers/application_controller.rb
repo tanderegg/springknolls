@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
       @params = params['path'].split('/')[0]
       @root_page = Refinery::Page.find_by_slug(params['path'].split('/')[0])
     else
-      @root_page = Refinery::Page.find_by_id(1)
+      @root_page = Refinery::Page.find_by_slug('home')
     end
   end
 end
