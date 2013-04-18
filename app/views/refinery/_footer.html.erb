@@ -4,14 +4,19 @@
   	<br />
 	(301) 650-0086  |  <a href="mailto:director@springknolls.org">director@springknolls.org</a>
   </div>
-  <ul>
-  <% for page in refinery_menu_pages.roots %>
-  	<li><a href="<%= page.url %>"><%= page.title %></a> | </li>
+  
+  <ul style="width: 525px;">
+  
+  <% for page in @root_page.children %>
+    <% if page.in_menu? %>
+  	 <li><a href="<%= page.url %>"><%= page.title %></a> | </li>
+    <% end %>
   <% end %>
-  	<li><a href="/faqs">FAQs</a> | </li>
+
+  <li><a href="/faq">FAQ</a> | </li>
 	<li><a href="https://www.facebook.com/SpringKnolls.Coop" target="_blank">FB</a> | </li>
-	<li><a href="/open-house">Open House</a> | </li>
-	<li><a href="/our-school/location">Location</a></li>
+	<li><a href="/home/open-house">Open House</a> | </li>
+	<li><a href="/home/location">Location</a></li>
   </ul>
   <%= t('.copyright', :year => Time.now.year,
                       :site_name => Refinery::Core.site_name) %>

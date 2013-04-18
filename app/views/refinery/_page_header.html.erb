@@ -8,10 +8,17 @@
 
 		<nav id="quick-links">
 			<ul>
-				<li><a href="/home/faqs">FAQ</a></li>
-				<li><a href="https://www.facebook.com/SpringKnolls.Coop" target="_blank">Facebook</a></li>
-				<li><a href="/home/open-house">Open House</a></li>
-				<li><a href="/home/location">Location</a></li>
+				<%- if @page.nested_url.include? "parents-site" %>
+					<li><a href="/parents-site/faq">FAQ</a></li>
+					<li><a href="https://www.facebook.com/SpringKnolls.Coop" target="_blank">Facebook</a></li>
+					<li><a href="/parents-site/calendar">Calendar</a></li>
+					<li><a href="/home/location">Location</a></li>
+				<% else %>
+					<li><a href="/home/faq">FAQ</a></li>
+					<li><a href="https://www.facebook.com/SpringKnolls.Coop" target="_blank">Facebook</a></li>
+					<li><a href="/home/open-house">Open House</a></li>
+					<li><a href="/home/location">Location</a></li>
+				<% end %>
 			</ul>
 		</nav>
 	</div>
