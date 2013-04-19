@@ -8,7 +8,7 @@
 
 		<nav id="quick-links">
 			<ul>
-				<%- if @page.nested_url.include? "parents-site" %>
+				<%- if @page and (@page.nested_url.include? "parents-site") %>
 					<li><a href="/parents-site/faq">FAQ</a></li>
 					<li><a href="https://www.facebook.com/SpringKnolls.Coop" target="_blank">Facebook</a></li>
 					<li><a href="/parents-site/calendar">Calendar</a></li>
