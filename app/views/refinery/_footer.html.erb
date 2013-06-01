@@ -9,11 +9,11 @@
   
   <% for page in @root_page.children %>
     <% if page.in_menu? %>
-  	 <li><a href="<%= page.url %>"><%= page.title %></a> | </li>
+  	 <li><a href="<%= refinery.url_for(page.url) %>"><%= page.title %></a> | </li>
     <% end %>
   <% end %>
 
-  <li><a href="/<%= @root_page.title %>/faq">FAQ</a> | </li>
+  <li><a href="/<%= @root_page.title.downcase %>/faq">FAQ</a> | </li>
 	<li><a href="https://www.facebook.com/SpringKnolls.Coop" target="_blank">FB</a> | </li>
   <% if @page and @page.nested_url.include? 'parents-site' %>
 	    <li><a href="/parents-site/calendar">Calendar</a> | </li>
