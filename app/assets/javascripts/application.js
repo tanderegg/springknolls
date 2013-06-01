@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$('img').bind('contextmenu', function(e) {
+    return false;
+}); 
