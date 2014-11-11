@@ -58,10 +58,6 @@ module Springknolls
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
-    ENV['S3_BUCKET'] = "springknolls_production"
-    ENV['S3_KEY'] = "AKIAIEJ4FKYB4HCBAY7Q"
-    ENV['S3_SECRET'] = "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"
-
     config.action_mailer.raise_delivery_errors = false
     config.action_mailer.delivery_method = :sendmail
     config.action_mailer.perform_deliveries = false
